@@ -303,7 +303,18 @@ body {
 /* SECTION 2: FEATURED IN */
 
 .section-featured-in {
-  margin: 9.6rem 0;
+  margin-top: 4.8rem;
+  margin-bottom: 9.6rem;
+}
+
+.featured-in-heading {
+  display: flex;
+  justify-content: center;
+  color: #888;
+  font-weight: 500;
+  letter-spacing: 0.75px;
+  font-size: 1.4rem;
+  margin-bottom: 2.4rem;
 }
 
 .featured-in-img {
@@ -314,15 +325,15 @@ body {
 
 .featured-in-img img {
   height: 3.2rem;
-  /* filter: grayscale(100%); */
 
-  filter: brightness(0) saturate(100%);
-  /* makes it pure black */
+  filter: brightness(0);
+  opacity: 50%;
 }
 
 /* SECTION 3: HOW IT WORKS */
 
 .section-how-it-works {
+  margin-bottom: 9.6rem;
 }
 
 .sub-heading {
@@ -395,8 +406,103 @@ body {
   z-index: -1;
 }
 
-/* SECTION 4: */
+/* SECTION 4: MEALS*/
 
+.meal-card {
+  height: 50rem;
+  box-shadow: 0px 0px 10px rgba(206, 212, 218, 0.518);
+
+  border-radius: 15px;
+}
+
+.meal-card-icon {
+  height: 24px;
+  width: 24px;
+  stroke: #e67e22;
+}
+
+.meal-card-img {
+  max-width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.meal-card-text {
+  padding: 3.2rem;
+}
+
+.card-tag {
+  display: inline-block;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  padding: 4px 8px;
+  margin-bottom: 1.6rem;
+  /* border-radius: 100%; */
+}
+
+.card-tag.vegetarian {
+  background-color: #40c057;
+}
+
+.card-tag.vegan {
+  background-color: #82c91e;
+}
+.card-tag.paleo {
+  background-color: #fcc419;
+}
+
+.card-title {
+  color: #343a40;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.card-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.card-item-text {
+  font-size: 1.8rem;
+  line-height: 2;
+}
+.diets {
+  height: 50rem;
+}
+
+.diet-title {
+  color: #343a40;
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+}
+
+.check-icon {
+  height: 24px;
+  width: 24px;
+  stroke: #cf711f;
+}
+
+.diet-list-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 1.8rem;
+  line-height: 2;
+}
+
+.link-see-recipes:link,
+.link-see-recipes:visited {
+  color: #cf711f;
+}
+
+.link-see-recipes:hover,
+.link-see-recipes:active {
+  text-decoration: none;
+}
 .container {
-  /* background-color: purple; */
+  /* background-color: violet; */
 }
