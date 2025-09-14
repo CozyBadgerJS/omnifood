@@ -16,7 +16,7 @@ Default: 1
 
   Primary: #e67e22
 
-  Tints: #fdf2e9 #f3bf91
+  Tints: #fdf2e9 #f3bf91 #fae5d3
   Shades: #cf711f
   Accents: 
   Greys: #555 , #343a40
@@ -57,9 +57,14 @@ body {
 
 .grid {
   display: grid;
-  gap: 9.6rem;
+  row-gap: 9.6rem;
+  column-gap: 6.4rem;
 }
 
+.grid-centered {
+  justify-content: center;
+  align-items: center;
+}
 .grid-2cols {
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
@@ -326,17 +331,13 @@ body {
   font-size: 1.8rem;
   font-weight: 500;
   margin-bottom: 2.4rem;
+  letter-spacing: 0.75px;
 }
 
 .heading-secondary {
   margin-bottom: 4.8rem;
 }
 
-.step-title {
-  color: #343a40;
-  font-size: 2.8rem;
-  margin-bottom: 3rem;
-}
 .step-number {
   display: block;
   color: #d6d8d9;
@@ -345,22 +346,56 @@ body {
   margin-bottom: 1.2rem;
 }
 
+.step-title {
+  color: #343a40;
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+}
 .step-description {
   font-size: 1.8rem;
   line-height: 3rem;
 }
 
 .app-screen {
-  height: 40rem;
+  width: 45%;
 }
 
-.app-screen::after {
-  content: "";
-  color: #cf711f;
-  width: 20rem;
-  height: 20rem;
-  border-radius: 50%;
+.screen-img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
+
+.screen-img-box::before,
+.screen-img-box::after {
+  content: "";
+  display: block;
+
+  border-radius: 50%;
+
+  position: absolute;
+}
+
+.screen-img-box::before {
+  background-color: #fdf2e9;
+  width: 80%;
+
+  /* height: 60%; */
+  /* the height does not apply, so we use trick with padding-bottom. Here it represents60% of parent element width */
+  padding-bottom: 80%;
+  z-index: -2;
+}
+.screen-img-box::after {
+  background-color: #fae5d3;
+  width: 60%;
+  padding-bottom: 60%;
+
+  /* z index means that if an element has less value thatn another, then its gonna appear behind, so this is why we put a negative number */
+  z-index: -1;
+}
+
+/* SECTION 4: */
 
 .container {
   /* background-color: purple; */
