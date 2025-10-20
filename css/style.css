@@ -242,7 +242,7 @@ body {
   border-radius: 0.9rem;
 
   /* We always put transition the on original state */
-  transition: background-color 0.3s;
+  transition: all 0.3s;
 }
 
 .button1:link,
@@ -265,7 +265,6 @@ body {
 .button2:hover,
 .button2:active {
   background-color: #fdf2e9;
-  /* border: 0.2rem solid white; */
 
   /* Trick to add border inside  */
   box-shadow: inset 0 0 0 0.3rem white;
@@ -345,8 +344,17 @@ body {
   letter-spacing: 0.75px;
 }
 
+.sub-heading.centered {
+  text-align: center;
+}
+
 .heading-secondary {
   margin-bottom: 4.8rem;
+}
+
+.heading.heading-secondary.centered {
+  justify-self: center;
+  margin-bottom: 9.6rem;
 }
 
 .step-number {
@@ -408,17 +416,25 @@ body {
 
 /* SECTION 4: MEALS*/
 
-.meal-card {
-  height: 50rem;
-  box-shadow: 0px 0px 10px rgba(206, 212, 218, 0.518);
-
-  border-radius: 15px;
+.section-meals {
+  padding-bottom: 9.6rem;
 }
 
+.meal-card {
+  height: 52rem;
+  box-shadow: 0px 0px 20px rgba(216, 216, 216, 0.518);
+
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.meal-card:hover {
+  transform: translateY(-15px);
+}
 .meal-card-icon {
-  height: 24px;
-  width: 24px;
-  stroke: #e67e22;
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #e67e22;
 }
 
 .meal-card-img {
@@ -427,8 +443,8 @@ body {
   border-top-right-radius: 15px;
 }
 
-.meal-card-text {
-  padding: 3.2rem;
+.card-text-box {
+  padding: 3.8rem 5rem;
 }
 
 .card-tag {
@@ -439,7 +455,7 @@ body {
   color: #333;
   padding: 4px 8px;
   margin-bottom: 1.6rem;
-  /* border-radius: 100%; */
+  border-radius: 0.9rem;
 }
 
 .card-tag.vegetarian {
@@ -448,6 +464,7 @@ body {
 
 .card-tag.vegan {
   background-color: #82c91e;
+  margin-right: 0.4rem;
 }
 .card-tag.paleo {
   background-color: #fcc419;
@@ -461,15 +478,22 @@ body {
 }
 
 .card-item {
+  list-style: none;
   display: flex;
-  align-items: center;
-  gap: 1.2rem;
+  flex-direction: column;
+
+  gap: 1rem;
+  margin-bottom: 0.6rem;
 }
 
 .card-item-text {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
   font-size: 1.8rem;
   line-height: 2;
 }
+
 .diets {
   height: 50rem;
 }
@@ -480,29 +504,282 @@ body {
   margin-bottom: 3rem;
 }
 
-.check-icon {
-  height: 24px;
-  width: 24px;
-  stroke: #cf711f;
+.check-icon,
+.no-icon {
+  height: 3rem;
+  width: 3rem;
+  color: #cf711f;
 }
 
 .diet-list-item {
+  list-style: none;
+
   display: flex;
-  align-items: center;
-  gap: 1.2rem;
+  flex-direction: column;
+
+  gap: 1.8rem;
   font-size: 1.8rem;
   line-height: 2;
 }
 
+.diet-list-item li {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+.container.link-see-recipes {
+  display: flex;
+}
 .link-see-recipes:link,
 .link-see-recipes:visited {
+  display: block;
+  justify-self: center;
   color: #cf711f;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+
+  font-size: 1.8rem;
+  margin-top: 5rem;
+
+  transition: all 0.3s;
 }
 
 .link-see-recipes:hover,
 .link-see-recipes:active {
+  border-bottom: 1px solid transparent;
+}
+
+/* SECTION 5: TESTIMONIALS */
+
+.section-testimonials {
+  background-color: #fdf2e9;
+
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 4.8rem;
+  column-gap: 8rem;
+}
+
+.customer-testimonial {
+  padding: 9.6rem;
+}
+
+.testimonial-icon {
+  max-width: 6.4rem;
+  border-radius: 100%;
+  margin-bottom: 1.2rem;
+}
+
+.testimonial-text {
+  font-size: 1.8rem;
+  margin-bottom: 1.6em;
+  line-height: 1.8;
+}
+
+.testimonial-author {
+  font-size: 1.6rem;
+}
+
+.food-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1.6rem;
+  column-gap: 1.6rem;
+  padding: 1.6rem;
+  align-self: center;
+}
+
+.gallery-photo {
+  overflow: hidden;
+}
+.gallery-photo img {
+  display: block;
+  width: 100%;
+  transition: all 0.4s;
+}
+.gallery-photo img:hover {
+  transform: scale(1.1);
+}
+
+/* SECTION 6 : PRICING */
+
+.section-pricing {
+  padding-top: 7.6rem;
+  padding-bottom: 7.6rem;
+  margin-bottom: 9.6rem;
+}
+.pricing-card {
+  border: 1px solid #f3bf91;
+  border-radius: 9px;
+  font-size: 1.8rem;
+  justify-items: center;
+
+  width: 80%;
+
+  margin-top: 3.2rem;
+  padding: 4.8rem 2.4rem;
+}
+.starter {
+  justify-self: end;
+}
+.premium {
+  border: 1px solid transparent;
+  background-color: #fdf2e9;
+  justify-self: start;
+  position: relative;
+  overflow: hidden;
+}
+
+.premium::after {
+  content: "BEST VALUE";
+
+  padding: 0.8rem 8rem;
+
+  font-size: 1.4rem;
+  font-weight: 700;
+  background-color: #ffd43b;
+
+  position: absolute;
+  top: 5%;
+  right: -18%;
+  transform: rotate(45deg);
+}
+
+.pricing-plan {
+  display: block;
+  color: #cf711f;
+  font-weight: 600;
+  font-size: 2rem;
+
+  margin-bottom: 3.2rem;
+}
+
+.price-sign {
+  color: #343a40;
+  font-weight: 500;
+  font-size: 3.2rem;
+}
+.price {
+  color: #343a40;
+  font-size: 6.4rem;
+  font-weight: 600;
+}
+.price-desc {
+  color: #555;
+  font-size: 1.6rem;
+  margin-top: 1.4rem;
+  margin-bottom: 5.2rem;
+}
+
+.plan-details-list {
+  list-style: none;
+  font-size: 1.8rem;
+}
+
+.plan-detail {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.plan-detail:last-child {
+  margin-bottom: 3.4rem;
+}
+
+.eat-well-button:link,
+.eat-well-button:visited {
+  display: block;
+  color: white;
+  background-color: #e67e22;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+
   text-decoration: none;
+  font-weight: 600;
+  font-size: 2rem;
+
+  transition: all 0.3s;
 }
-.container {
-  /* background-color: violet; */
+
+.eat-well-button:hover,
+.eat-well-button:active {
+  background-color: #cf711f;
 }
+
+.price-disclaimer {
+  color: #555;
+  justify-self: center;
+  font-size: 1.6rem;
+  margin-top: 6.4rem;
+  margin-bottom: 9.6rem;
+}
+
+/* FEATURES */
+
+.features {
+  display: flex;
+  gap: 6.9rem;
+}
+
+.feature-icon {
+  height: 3rem;
+  width: 3rem;
+  color: #cf711f;
+  background-color: #fdf2e9;
+  border-radius: 50%;
+  padding: 1.8rem;
+
+  margin-bottom: 3rem;
+}
+.feature-title {
+  color: #343a40;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.feature-description {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+/* SECTION 7: CALL TO ACTION */
+
+.section-call-to-action {
+  margin-bottom: 9.6rem;
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* background-color: #e67e22; */
+  border-radius: 11px;
+  box-shadow: 0 2.4rem 4rem rgba(0, 0, 0, 0.15);
+
+  overflow: hidden;
+
+  background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+
+  height: 50rem;
+}
+
+.cta-img-box {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(235, 151, 78, 0.35),
+      rgba(230, 125, 34, 0.35)
+    ),
+    url(../img/eating.jpg);
+
+  background-size: cover;
+  background-position: center;
+}
+/* .container {
+  background-color: violet;
+} */
